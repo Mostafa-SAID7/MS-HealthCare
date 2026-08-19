@@ -24,7 +24,7 @@ export function Projects() {
         <h2 className="mb-8 font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-foreground text-center md:text-start">
           {tr("works.title")}
         </h2>
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {featuredWorks.map((project, index) => {
             const num = `0${index + 1}`;
             const Icon = icons[index % icons.length] ?? Rocket;
@@ -34,20 +34,20 @@ export function Projects() {
               <Reveal
                 key={project.id}
                 delay={index * 0.1}
-                className="relative flex flex-col justify-between rounded-2xl bg-card p-7 border border-border shadow-glow group hover:-translate-y-2 transition-all duration-300"
+                className="relative flex min-w-0 flex-col justify-between rounded-2xl bg-card p-5 sm:p-7 border border-border shadow-glow group hover:-translate-y-2 transition-all duration-300"
               >
                 <div>
                   {/* Header Row */}
-                  <div className="flex items-center justify-between mb-4 px-1">
-                    <div>
+                  <div className="flex items-center justify-between gap-3 mb-4 px-1">
+                    <div className="min-w-0">
                       <span className="font-display text-2xl font-bold text-card-foreground leading-none block">
                         {num}
                       </span>
-                      <span className="font-sans text-[10px] font-black tracking-[0.2em] text-card-foreground/80 uppercase">
+                      <span className="block truncate font-sans text-[10px] font-black tracking-[0.2em] text-card-foreground/80 uppercase">
                         {category(project.category)}
                       </span>
                     </div>
-                    <div className="grid size-9 place-items-center rounded-xl bg-foreground/10 border border-border text-card-foreground">
+                    <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-foreground/10 border border-border text-card-foreground">
                       <Icon className="size-4 text-primary" />
                     </div>
                   </div>
@@ -70,7 +70,7 @@ export function Projects() {
                   </div>
 
                   {/* Card Title & Subtitle */}
-                  <h3 className="font-display text-2xl font-bold text-card-foreground leading-tight mb-2 px-1 line-clamp-1">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-card-foreground leading-tight mb-2 px-1 line-clamp-2">
                     {projectTitle(project)}
                   </h3>
 

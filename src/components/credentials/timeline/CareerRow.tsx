@@ -33,10 +33,13 @@ export function CareerRow({ item, icon: Icon, open, reduce, onToggle }: CareerRo
       <button
         onClick={onToggle}
         aria-expanded={open}
-        className="flex w-full flex-col gap-4 p-5 text-start sm:flex-row sm:items-center sm:justify-between sm:p-6"
+        className="flex w-full flex-col gap-4 p-5 text-start lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:p-6"
       >
-        <div className="flex items-center gap-5 sm:gap-7">
-          <span dir="ltr" className="min-w-10 font-['Oswald',sans-serif] text-sm font-bold opacity-80">
+        <div className="flex min-w-0 items-center gap-4 sm:gap-6">
+          <span
+            dir="ltr"
+            className="min-w-10 shrink-0 font-['Oswald',sans-serif] text-sm font-bold opacity-80"
+          >
             {item.year}
           </span>
 
@@ -62,9 +65,9 @@ export function CareerRow({ item, icon: Icon, open, reduce, onToggle }: CareerRo
           </div>
         </div>
 
-        <div className="flex items-center gap-3 sm:max-w-[20rem] sm:justify-end">
+        <div className="flex min-w-0 items-center gap-3 lg:max-w-[20rem] lg:justify-end">
           <p
-            className={`text-xs font-bold sm:text-end ${
+            className={`min-w-0 text-xs font-bold lg:text-end ${
               featured ? "opacity-90" : "text-muted-foreground"
             }`}
           >
