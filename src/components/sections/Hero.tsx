@@ -19,7 +19,7 @@ export function Hero() {
           {/* Large Oswald Headline */}
           <h1
             style={{ animationDelay: "0.08s" }}
-            className="enter-up font-display text-[64px] sm:text-[84px] md:text-[104px] font-bold uppercase leading-[0.85] text-foreground tracking-normal"
+            className="enter-up font-display text-[clamp(2.75rem,13vw,4rem)] sm:text-[84px] md:text-[104px] font-bold uppercase leading-[0.85] text-foreground tracking-normal break-words"
           >
             {tr("hero.name.first")}
             <br />
@@ -32,20 +32,20 @@ export function Hero() {
             style={{ animationDelay: "0.18s" }}
             className="enter-up mt-6 flex flex-col items-center lg:items-start gap-4"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 lg:justify-start">
               <p className="max-w-md text-sm sm:text-base font-medium leading-snug text-foreground/90 text-center lg:text-start">
                 {tr("hero.subtitle")}
               </p>
-              <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-foreground/10 border border-border text-foreground">
+              <div className="hidden size-9 shrink-0 place-items-center rounded-xl bg-foreground/10 border border-border text-foreground sm:grid">
                 <Trophy className="size-4 text-primary" />
               </div>
             </div>
 
             {/* Primary actions: view work + download CV, inline on one line */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <div className="mt-4 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:justify-start">
               <a
                 href="#works"
-                className="group inline-flex items-center gap-3 rounded-xl bg-card px-7 py-3.5 shadow-lg border border-border transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-card px-6 py-3.5 shadow-lg border border-border transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-7"
               >
                 <span className="grid size-7 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:rotate-12">
                   <Play
@@ -61,7 +61,7 @@ export function Hero() {
                 href="/cv/Mostafa_Samir_CV.pdf"
                 download="Mostafa_Samir_CV.pdf"
                 type="application/pdf"
-                className="group inline-flex items-center gap-3 rounded-xl bg-primary px-7 py-3.5 shadow-lg border border-primary transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="group inline-flex items-center justify-center gap-3 rounded-xl bg-primary px-6 py-3.5 shadow-lg border border-primary transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-7"
               >
                 <span className="grid size-7 place-items-center rounded-xl bg-primary-foreground/15 text-primary-foreground transition-transform duration-300 group-hover:translate-y-0.5">
                   <Download className="size-3.5" />
