@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Code2, ExternalLink, Rocket } from "lucide-react";
 import { projects } from "@/data";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useI18n } from "@/lib/i18n";
 import { useLocalizedContent } from "@/lib/localize";
 
@@ -18,13 +19,11 @@ export function Projects() {
   return (
     <section
       id="works"
-      className="w-full bg-background py-16 px-4 sm:px-8 md:px-12 text-foreground select-none"
+      className="section-shell section-y select-none"
     >
-      <div className="mx-auto max-w-6xl">
-        <h2 className="mb-8 font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-foreground text-center md:text-start">
-          {tr("works.title")}
-        </h2>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container-page">
+        <SectionHeading title={tr("works.title")} align="start" />
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
           {featuredWorks.map((project, index) => {
             const num = `0${index + 1}`;
             const Icon = icons[index % icons.length] ?? Rocket;
@@ -34,20 +33,18 @@ export function Projects() {
               <Reveal
                 key={project.id}
                 delay={index * 0.1}
-                className="relative flex min-w-0 flex-col justify-between rounded-2xl bg-card p-5 sm:p-7 border border-border shadow-glow group hover:-translate-y-2 transition-all duration-300"
+                className="relative flex flex-col justify-between rounded-2xl bg-card p-7 border border-border shadow-glow group hover:-translate-y-2 transition-all duration-300"
               >
                 <div>
                   {/* Header Row */}
-                  <div className="flex items-center justify-between gap-3 mb-4 px-1">
-                    <div className="min-w-0">
-                      <span className="font-display text-2xl font-bold text-card-foreground leading-none block">
-                        {num}
-                      </span>
-                      <span className="block truncate font-sans text-[10px] font-black tracking-[0.2em] text-card-foreground/80 uppercase">
+                  <div className="flex items-center justify-between mb-4 px-1">
+                    <div>
+                      <span className="type-h3 text-card-foreground leading-none block">{num}</span>
+                      <span className="type-micro text-card-foreground/80">
                         {category(project.category)}
                       </span>
                     </div>
-                    <div className="grid size-9 shrink-0 place-items-center rounded-xl bg-foreground/10 border border-border text-card-foreground">
+                    <div className="grid size-9 place-items-center rounded-xl bg-foreground/10 border border-border text-card-foreground">
                       <Icon className="size-4 text-primary" />
                     </div>
                   </div>
@@ -64,18 +61,18 @@ export function Projects() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
                     {/* Top-Right Badge Overlay */}
-                    <div className="absolute top-3 end-3 rounded-xl bg-black/40 backdrop-blur-md px-3 py-1 text-[9px] font-black tracking-wider text-white border border-white/20 uppercase">
+                    <div className="absolute top-3 end-3 rounded-xl bg-black/40 backdrop-blur-md px-3 py-1 type-micro text-overlay-foreground border border-white/20">
                       {projectType(project.type)}
                     </div>
                   </div>
 
                   {/* Card Title & Subtitle */}
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-card-foreground leading-tight mb-2 px-1 line-clamp-2">
+                  <h3 className="type-h3 text-card-foreground mb-2 px-1 line-clamp-1">
                     {projectTitle(project)}
                   </h3>
 
                   {/* Description */}
-                  <p className="font-sans text-xs text-card-foreground/85 leading-relaxed mb-4 px-1 line-clamp-3">
+                  <p className="type-body text-card-foreground/85 mb-4 px-1 line-clamp-3">
                     {projectDescription(project)}
                   </p>
 
@@ -85,13 +82,13 @@ export function Projects() {
                       <span
                         key={t}
                         dir="ltr"
-                        className="keep-latin rounded-xl bg-primary/10 border border-primary/20 px-3 py-1 text-[9px] font-black tracking-widest text-primary uppercase shadow-sm"
+                        className="keep-latin rounded-xl bg-primary/10 border border-primary/20 px-3 py-1 type-micro text-primary shadow-sm"
                       >
                         {t}
                       </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="rounded-xl bg-foreground/5 border border-border px-2 py-1 text-[9px] font-black tracking-widest text-foreground uppercase shadow-sm">
+                      <span className="rounded-xl bg-foreground/5 border border-border px-2 py-1 type-micro text-foreground shadow-sm">
                         +{project.tech.length - 3}
                       </span>
                     )}
@@ -103,9 +100,9 @@ export function Projects() {
                   <Link
                     to="/projects/$id"
                     params={{ id: project.id }}
-                    className="inline-flex items-center gap-3 rounded-xl bg-background px-6 py-3 shadow-md border border-border transition-transform hover:scale-105 w-full justify-center group/btn"
+                    className="btn-surface w-full group/btn"
                   >
-                    <span className="font-sans text-[10px] font-black tracking-[0.2em] text-foreground uppercase group-hover/btn:text-primary transition-colors">
+                    <span className="type-micro text-foreground group-hover/btn:text-primary transition-colors">
                       {tr("projects.preview.view")}
                     </span>
                     <ArrowRightIcon className="size-3 text-foreground group-hover/btn:text-primary transition-colors group-hover/btn:translate-x-1 rtl:rotate-180" />
