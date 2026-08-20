@@ -17,7 +17,7 @@ export function CareerTabs({ activeTab, reduce, onSelect }: CareerTabsProps) {
     <div
       role="tablist"
       aria-label={tr("events.title")}
-      className="mt-10 mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
+      className="mt-10 mb-10 flex flex-wrap items-center justify-center gap-3"
     >
       {credentialTabs.map((id) => {
         const Icon = tabIcons[id];
@@ -29,7 +29,7 @@ export function CareerTabs({ activeTab, reduce, onSelect }: CareerTabsProps) {
             role="tab"
             aria-selected={active}
             onClick={() => onSelect(id)}
-            className={`relative inline-flex items-center gap-2 rounded-xl px-3.5 py-2 font-sans text-[10px] font-black tracking-[0.12em] whitespace-nowrap uppercase transition-colors sm:px-5 sm:py-2.5 sm:text-xs sm:tracking-[0.18em] ${
+            className={`type-label relative inline-flex items-center gap-2 pill-step rounded-xl whitespace-nowrap transition-colors ${
               active
                 ? "text-background"
                 : "border border-border bg-foreground/5 text-foreground hover:bg-foreground/15"
@@ -48,7 +48,7 @@ export function CareerTabs({ activeTab, reduce, onSelect }: CareerTabsProps) {
               <Icon className="size-3.5" />
               {tr(`events.tab.${id}`)}
               <span
-                className={`rounded-md px-1.5 py-0.5 text-[10px] ${
+                className={`type-micro tag-step rounded-md ${
                   active ? "bg-background/20" : "bg-foreground/10"
                 }`}
               >
