@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { describeError } from "@/lib/error-capture";
 import { ThemeProvider, themeBootstrapScript } from "@/lib/theme";
 import { I18nProvider, langBootstrapScript, useI18n } from "@/lib/i18n";
+import { MotionProvider } from "@/lib/motion-provider";
 import { useSmoothScroll } from "@/lib/smooth-scroll";
 import { PageSkeleton } from "@/components/ui/Skeletons";
 import { AppPreloader, preloaderBootstrapScript } from "@/components/ui/AppPreloader";
@@ -173,16 +174,18 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <I18nProvider>
-          <ArabicFonts />
-          <AppPreloader />
-          {hydrated && (
-            <Suspense fallback={null}>
-              <Toaster position="bottom-right" richColors />
-              <WelcomeModal />
-            </Suspense>
-          )}
-          {/* Required: nested routes render here. */}
-          <Outlet />
+          <MotionProvider>
+            <ArabicFonts />
+            <AppPreloader />
+            {hydrated && (
+              <Suspense fallback={null}>
+                <Toaster position="bottom-right" richColors />
+                <WelcomeModal />
+              </Suspense>
+            )}
+            {/* Required: nested routes render here. */}
+            <Outlet />
+          </MotionProvider>
         </I18nProvider>
       </ThemeProvider>
     </QueryClientProvider>
