@@ -5,6 +5,7 @@ import { Breakdown } from "@/components/breakdown";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
 import { ProjectSlide } from "@/components/project-slide";
+import { ProjectsCatalogDialog } from "@/components/projects-catalog-dialog";
 import { Reveal } from "@/components/reveal";
 import { Services } from "@/components/services";
 import { SiteNav } from "@/components/site-nav";
