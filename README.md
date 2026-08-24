@@ -1,24 +1,44 @@
-# Creative Vision Forge
+# 🏥 MS-HealthCare
 
-clone this and run https://github.com/samirone356/creative-vision-forge
+> Modern healthcare platform built with cutting-edge web technologies
 
-This project was built with [Lovable](https://lovable.dev).
+## ✨ Overview
 
-## Build with Lovable
+MS-HealthCare is a sleek, responsive healthcare management platform featuring:
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b612a118-df8e-4d84-807e-2c2deebc3277).
+- **Dark Mode Support** - Eye-friendly interface with theme switching
+- **Modern UI Components** - Built with Radix UI and Tailwind CSS
+- **Responsive Design** - Works seamlessly across all devices
+- **Real-time Updates** - Powered by React Query for efficient data fetching
+- **Type Safe** - Full TypeScript support for reliable code
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 🚀 Quick Start
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/Mostafa-SAID7/MS-HealthCare.git
+cd MS-HealthCare
+npm install
 npm run dev
 ```
+
+Visit `http://localhost:5173` to see it running.
+
+## 📦 Tech Stack
+
+- **Frontend**: React 19, TanStack Router, TanStack Query
+- **Styling**: Tailwind CSS, Radix UI Components
+- **Build**: Vite, TypeScript
+- **Tooling**: ESLint, Prettier
+
+## 🛠️ Commands
+
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run lint` | Run linter |
+| `npm run format` | Format code |
+
+## 📄 License
+
+This project is open source and available under the MIT License.
