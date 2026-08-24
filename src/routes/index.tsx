@@ -52,11 +52,15 @@ function Index() {
               </div>
             </div>
 
-            {projects.map((project) => (
+            {projects.slice(0, 2).map((project) => (
               <Reveal key={project.slug} variant="tilt">
                 <ProjectSlide project={project} />
               </Reveal>
             ))}
+
+            <div className="flex justify-center pt-6">
+              <ProjectsCatalogDialog />
+            </div>
           </div>
         </section>
 
